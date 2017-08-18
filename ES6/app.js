@@ -36,7 +36,7 @@ let carModel = cars.map(car => {
 console.log('Make:', carMake);
 console.log('Model:', carModel);
 
-/////////////////////////////////////////
+//////////////////////////////////////////
 let array = [2,5,4,3,1,6,7,8,9];
 
 
