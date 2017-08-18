@@ -57,3 +57,14 @@ let test = 'RACECAR';
 let reversed = test.split('').reverse().join('');
 reversed = reversed.toLowerCase();
 console.log(reversed);
+
+function person(name,age,gender) {
+  this.name = name;
+  this.age = age;
+  this.gender = gender;
+}
+
+let person1 = new person('Derek', 27, 'Male');
+let person2 = new person('Sam', 22, 'Female')
+
+console.log(person1.name)
