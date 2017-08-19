@@ -88,3 +88,18 @@ var result2 = addFour(1);
 
 console.log('Three + 1 = ' ,result1);
 console.log('Four + 1 = ' ,result2);
+
+//another closure example of my own make
+
+var firstName = function(first){
+  var lastName = function(last){
+    return first + ' ' + last;
+  }
+  return lastName;
+}
+
+var Sam = firstName('Sam');
+var SamAllred = Sam('Allred');
+var SamCarter = Sam('Carter');
+console.log(SamCarter);
+console.log(SamAllred);
