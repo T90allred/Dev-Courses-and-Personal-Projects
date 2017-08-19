@@ -4,7 +4,7 @@ let sum = 0;
 
 arr.forEach( arrItem => {
   sum += arrItem;
-  
+
 });
 
 console.log(sum);
@@ -68,3 +68,23 @@ let person1 = new person('Derek', 27, 'Male');
 let person2 = new person('Sam', 22, 'Female')
 
 console.log(person1.name)
+
+//closure example
+
+var addTo = function(passed){
+  var add = function(inner){
+    return passed + inner;
+  }
+  return add;
+}
+//the first time we call this function it holds on to the first argument passed in our case there are two instances of the addTo function.
+//The first hold on to the value 3 and the second 4. So when we call addThree and pass a number, the number that we pass will always be added to 3.
+
+var addThree = new addTo(3);
+var addFour = new addTo(4);
+
+var result1 = addThree(1);
+var result2 = addFour(1);
+
+console.log('Three + 1 = ' ,result1);
+console.log('Four + 1 = ' ,result2);
