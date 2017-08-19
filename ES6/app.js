@@ -103,3 +103,22 @@ var SamAllred = Sam('Allred');
 var SamCarter = Sam('Carter');
 console.log(SamCarter);
 console.log(SamAllred);
+
+//example of closure that is 3 layers deep... inception anyone?
+
+var func1 = function(arg1){
+  var func2 = function(arg2){
+    var func3 = function(arg3){
+      return arg1 + arg2 + arg3;
+    }
+    return func3;
+  }
+  return func2;
+}
+
+var test1 = new func1(1);
+
+var one = test1(2);
+var result = one(3);
+
+console.log('1 + 2 + 3 = ', result);
