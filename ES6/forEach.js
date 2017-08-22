@@ -9,4 +9,9 @@ for (var i = 0; i < names.length; i++) {
 //new way using array helper method
 names.forEach( function (item) {
   console.log(item);
-})
+});
+
+//same .forEach helper method, with arrow function
+names.forEach( item => {
+  console.log(item);
+});
