@@ -32,3 +32,23 @@ let queryResults = products.filter( (item) => {
   return item.type === 'vegetable' && item.quantity > 6 && item.price < 2.00;
 });
 console.log(queryResults);
+
+//another example
+let firstPost = {id: 4, title: 'New Post'};
+let secondPost = {id: 3, title: 'Other Post'};
+let comments = [
+  {postId: 4, content: 'cool post bro'},
+  {postId: 3, content: 'did you need to say that?'},
+  {postId: 2, content: 'call me maybe!'},
+  {postId: 3, content: '*&^$&#^&@!@'},
+  {postId: 4, content: 'Nice work'}
+];
+function filterComments(post, comments) {
+  return comments.filter((comment) => {
+    return comment.postId === post.id;
+  });
+}
+
+console.log(filterComments(firstPost, comments));
+console.log('--------------------------------------');
+console.log(filterComments(secondPost, comments));
