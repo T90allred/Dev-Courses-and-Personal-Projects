@@ -1,6 +1,6 @@
 let numbers = [1,2,3,4,5,6];
 let doubled = [];
-doubledNumbers = [];
+let doubledNumbers = [];
 
 for (var i = 0; i < numbers.length; i++) {
 
@@ -8,7 +8,7 @@ for (var i = 0; i < numbers.length; i++) {
 }
 console.log(doubled);
 
-let doubledNumbers = numbers.map( (num) => {
+doubledNumbers = numbers.map( (num) => {
   return num * 2;
 });
 
