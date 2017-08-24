@@ -13,3 +13,20 @@ doubledNumbers = numbers.map( (num) => {
 });
 
 console.log(doubledNumbers);
+
+let cars = [
+  {
+    make: 'Subaru',
+    model: 'Impreza'
+  },
+  {
+    make: 'Toyota',
+    model: 'Rav4'
+  }
+]
+
+let makes = cars.map( (car) => {
+  return car.make;
+});
+
+console.log(makes);
