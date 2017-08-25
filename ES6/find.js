@@ -38,3 +38,17 @@ let myCar = cars.find((car) => {
   return car.model === 'Subaru';
 });
 console.log(myCar);
+
+let posts = [
+  {id: 1, title: 'New Post'},
+  {id: 2, title: 'Old Post'}
+];
+
+let comment = {postId: 1, content: 'Great post bro'};
+
+function postForComment(allPosts, theComment) {
+  return allPosts.find((post) => {
+    return post.id === theComment.postId;
+  });
+};
+console.log(postForComment(posts, comment));
