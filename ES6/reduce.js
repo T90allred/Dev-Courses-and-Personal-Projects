@@ -10,3 +10,18 @@ numbers.reduce( (sum, number) => {
   return sum + number;
 },0)
 console.log(sum);
+
+//example using .reduce
+let primaryColors = [
+  {color: 'red'},
+  {color: 'yellow'},
+  {color: 'blue'},
+];
+
+primaryColors.reduce( (previous, primaryColor) => {
+  previous.push(primaryColor.color);
+  return previous;
+}, []);
+
+
+//practical example using .reduce
