@@ -18,3 +18,14 @@ for (var i = 0; i < computers.length; i++) {
 
 console.log(allCanRun);
 console.log(onlySomeCanRun);
+console.log('-----');
+
+console.log('Can EVERY computer run the program?');
+console.log(computers.every( (computer) => {
+  return computer.ram > 10;
+}));
+
+console.log('Can SOME computers run the program?');
+console.log(computers.some( (computer) => {
+  return computer.ram > 10;
+}));
