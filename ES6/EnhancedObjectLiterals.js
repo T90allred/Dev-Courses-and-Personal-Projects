@@ -52,3 +52,11 @@ const bookShop = createBookShop(inventory);
 console.log(bookShop.inventoryValue());
 console.log(bookShop.priceForTitle('YDKJS'));
 console.log(bookShop.whatCanIAfford(19));
+
+//----------------------------------------------  EXAMPLE  -------------------------
+function saveFile(url, data) {
+  $.ajax({ method: 'POST', url: url, data: data });
+}
+
+const url = "http://fileupload.com";
+const data = {color: red};
