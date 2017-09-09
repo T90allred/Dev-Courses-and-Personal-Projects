@@ -1,3 +1,7 @@
+//anytime there is a key value pair with same name for the key and value (like inventory below) you can
+//delete one and make it so it only says it once. for key value pairs that are funcitons you can delete the
+//"function" keyword and the : after the key, see below.
+
 //----------------------------------------------  OLD WAY  -------------------------
 function createBookShop(inventory) {
   return {
@@ -8,9 +12,6 @@ function createBookShop(inventory) {
     priceForTitle: function (title) {
       return this.inventory.find( (book) => book.title === title).price;
     }
-    // whatCanIAfford: function (amount) {
-    //   return this.inventory.map( (book) => book.price < amount).title;
-    // }
   }
 }
 
@@ -55,7 +56,11 @@ console.log(bookShop.whatCanIAfford(19));
 
 //----------------------------------------------  EXAMPLE  -------------------------
 function saveFile(url, data) {
-  $.ajax({ method: 'POST', url: url, data: data });
+  $.ajax({
+    url,
+    data,
+    method: 'POST'
+  });
 }
 
 const url = "http://fileupload.com";
