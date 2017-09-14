@@ -35,6 +35,5 @@ class Toyota extends Car {
 }
 
 const tacoma = new Toyota({color: 'White', title: 'My Truck'});
-
 const carInstance = new Car({title: 'Toyota'});
 console.log(tacoma.drive());
