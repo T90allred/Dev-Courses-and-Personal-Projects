@@ -48,4 +48,55 @@ const companies = [
   'Pluralsight'
 ];
 
+//this is how you acces indexes of an array
 const [first,second,third,last] = companies;
+
+//arrays have properties so you would access those properties like this
+const {length} = companies;
+
+//mixing array and object destructuring
+const companies2 = [
+  {name: 'Boostability', location: 'Utah'},
+  {name: 'Google', location: 'California'},
+  {name: 'Microsoft', location: 'Washington'}
+];
+
+const [{location}] = companies2;
+
+//another example
+const google = {
+  locations: ['utah','london','califonia']
+};
+
+const {locations: [location,location2,location3]} = google;
+
+console.log(location);
+
+//Practical example of destructuring arguments to a function call
+//This approach makes it so you dont have to remember the argumnet order when calling it.
+function signUpUser({userName, password, email, dateOfBirth, state}) {
+  //create new user
+  console.log(userName,password,email,dateOfBirth,state);
+}
+
+const user = {
+  userName: 'Derek',
+  password: 'mypassword',
+  email: 'derek@gmail.com',
+  dateOfBirth: '8/12/89',
+  state: 'Utah'
+}
+signUpUser(user);
+
+
+//example of array destructuring
+const points = [
+  [4,5],
+  [3,10],
+  [8,12],
+  [19,7]
+]
+
+points.map(([x,y]) => {
+  return {x,y};
+});
