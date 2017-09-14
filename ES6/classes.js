@@ -15,14 +15,26 @@ console.log(car.title);
 
 //new way using US6
 class Car {
-  constructor({title}) {
+  constructor({ title }) {
     this.title = title;
   }
-  
+
   drive() {
-    return 'vroom';
+    return 'zoom zoom';
   }
 }
 
+class Toyota extends Car {
+  constructor(options) {
+    super(options);
+    this.color = options.color;
+  }
+  honk() {
+    return 'beep!';
+  }
+}
+
+const tacoma = new Toyota({color: 'White', title: 'My Truck'});
+
 const carInstance = new Car({title: 'Toyota'});
-console.log(carInstance.drive());
+console.log(tacoma.drive());
