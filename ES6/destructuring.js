@@ -47,3 +47,5 @@ const companies = [
   'Jane.com',
   'Pluralsight'
 ];
+
+const [first,second,third,last] = companies;
