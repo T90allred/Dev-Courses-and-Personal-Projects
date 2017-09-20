@@ -22,5 +22,9 @@
 // console.log(__filename);
 
 
-let counterFunction = require('./counter');
-console.log(counterFunction([1,2,3,2,4]));
+const stuff = require('./stuff');
+
+console.log(stuff.counter([1,2,3,2,4]));
+console.log(stuff.adder(1,4));
+console.log(stuff.pi);
+console.log(stuff.adder(stuff.pi,stuff.pi));
