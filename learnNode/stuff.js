@@ -20,7 +20,7 @@ const pi = 3.142;
 //   pi: pi
 // }
 
-// this is like above but with ES5 object literals
+// this is like above but with ES6 object literals
 
 module.exports = {
   counter,
