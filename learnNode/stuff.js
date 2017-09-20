@@ -14,8 +14,16 @@ const pi = 3.142;
 
 // or you could do it this way and cut out more code!
 
+// module.exports = {
+//   counter: counter,
+//   adder: adder,
+//   pi: pi
+// }
+
+// this is like above but with ES5 object literals
+
 module.exports = {
-  counter: counter,
-  adder: adder,
-  pi: pi
+  counter,
+  adder,
+  pi
 }
