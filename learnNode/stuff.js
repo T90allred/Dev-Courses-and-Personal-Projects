@@ -51,6 +51,8 @@ people.forEach(function(person){
   });
 });
 
+console.log(derek);
+
 let count = 20;
 let countDown = setInterval( () => {
   count -= 2;
@@ -64,6 +66,8 @@ let countDown = setInterval( () => {
 derek.emit('speak','Node is awesome!');
 sam.emit('speak', 'I dont want to go home.');
 
+
+//another event emitter
 const theEvent = new events.EventEmitter();
 
 theEvent.on('someEvent',function(messg) {
