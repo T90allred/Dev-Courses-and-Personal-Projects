@@ -43,7 +43,7 @@ let jake = new Person('Jake');
 
 let people = [derek,sam,jake];
 
-people.forEach((person) => {
+people.forEach(function(person){
   person.on('speak',function(message) {
     console.log(`${person.name} said: ${message}`);
   });
