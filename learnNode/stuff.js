@@ -43,6 +43,8 @@ let jake = new Person('Jake');
 
 let people = [derek,sam,jake];
 
+util.inherits(Person,events.EventEmitter);
+
 people.forEach(function(person){
   person.on('speak',function(message) {
     console.log(`${person.name} said: ${message}`);
@@ -50,10 +52,6 @@ people.forEach(function(person){
 });
 
 derek.emit('speak','Node is awesome!');
-
-util.inherits(Person,events.EventEmitter);
-
-
 
 const theEvent = new events.EventEmitter();
 
