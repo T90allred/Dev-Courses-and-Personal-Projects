@@ -31,6 +31,29 @@ module.exports = {
 // Node's event module
 
 const events = require('events');
+const util = require('util');
+
+const Person = function(name) {
+  this.name = name;
+};
+
+let derek = new Person('Derek');
+let sam = new Person('Sam');
+let jake = new Person('Jake');
+
+let people = [derek,sam,jake];
+
+people.forEach((person) => {
+  person.on('speak',function(message) {
+    console.log(`${person.name} said: ${message}`);
+  });
+});
+
+derek.emit('speak','Node is awesome!');
+
+util.inherits(Person,events.EventEmitter);
+
+
 
 const theEvent = new events.EventEmitter();
 
