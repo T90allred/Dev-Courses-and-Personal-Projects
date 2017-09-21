@@ -27,3 +27,15 @@ module.exports = {
   adder,
   pi
 }
+
+// Node's event module
+
+const events = require('events');
+
+const theEvent = new events.EventEmitter();
+
+theEvent.on('someEvent',function(messg) {
+  console.log(messg);
+});
+
+theEvent.emit('someEvent', 'Event emmitter test');
