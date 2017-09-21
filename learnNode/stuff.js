@@ -51,7 +51,18 @@ people.forEach(function(person){
   });
 });
 
+let count = 20;
+let countDown = setInterval( () => {
+  count -= 2;
+  jake.emit('speak',`There is ${count} seconds left on the bomb!`);
+  if(count <= 0) {
+    console.log('BOOM!!!');
+    clearInterval(countDown);
+  }
+},2000)
+
 derek.emit('speak','Node is awesome!');
+sam.emit('speak', 'I dont want to go home.');
 
 const theEvent = new events.EventEmitter();
 
