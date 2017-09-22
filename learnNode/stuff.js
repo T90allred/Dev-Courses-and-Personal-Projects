@@ -43,6 +43,7 @@ let jake = new Person('Jake');
 
 let people = [derek,sam,jake];
 
+//adds speak function to each Person instance
 util.inherits(Person,events.EventEmitter);
 
 people.forEach(function(person){
@@ -51,8 +52,7 @@ people.forEach(function(person){
   });
 });
 
-console.log(derek);
-
+// bomb countdown functionality 
 let count = 20;
 let countDown = setInterval( () => {
   count -= 2;
