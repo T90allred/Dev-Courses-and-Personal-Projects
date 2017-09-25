@@ -1,3 +1,9 @@
 .special{
+  border-radius: 20px;
   color: #DD0031;
+  width: 50vw;
+  margin: auto;
+}
+h1{
+  background-color: #666;
 }
