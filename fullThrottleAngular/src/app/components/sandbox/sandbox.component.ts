@@ -3,11 +3,13 @@ import { Customer } from "./Customer";
 @Component({
     selector: 'sandbox',
     templateUrl: './sandbox.component.html',
+    styleUrls: ['./sandbox.component.css']
 })
 
 export class SandboxComponent{
     customer:Customer;
     customers:Customer[];
+    friends = ['Jack','Phil','Ben'];
     constructor() {
         this.customer = {
             id: 3726,
