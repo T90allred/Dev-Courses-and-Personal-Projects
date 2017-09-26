@@ -1,4 +1,9 @@
 <h1>Sandbox</h1>
+<!--this way-->
+<h2 *ngIf="showTitle; else:noTitle">{{title}}</h2>
+<ng-template #noTitle>Derek</ng-template>
+<!--or this way turninary opperator-->
+<h1>Im {{ showTitle ? title : 'Derek'}}</h1>
 <p>Id: {{customer.id}}</p>
 <p>Name: {{customer.name}}</p>
 <p>Email: {{customer.email}}</p>
@@ -22,4 +27,28 @@
     </li>
 </ul>
 
+<!--3 ways to bind properties-->
+<div>
+    <!--First Way-->
+    <img src="{{imageURL}}" alt="">
+</div>
+<div>
+    <!--Second Way-->
+    <img [src]="imageURL" alt="">
+</div>
+<div>
+    <!--Third Way-->
+    <img bind-src="imageURL" alt="">
+</div>
+<h3>Image Location: <span [textContent]="imageURL"></span></h3>
 
+<h2>Create Post</h2>
+<p [hidden]="!needsUpdate">Post needs to be saved</p>
+<button [disabled]="!needsUpdate">Save</button>
+<h3 [class.special]="isSpecial">Am I Special?</h3>
+<h3 [ngClass]="currentClasses">This div is innitially special and can save</h3>
+<h2>My birthday is {{ birthday | date | uppercase }}</h2>
+<h2>My birthday is {{ birthday | date:"MM-dd-yy"  }}</h2>
+<h2>I was born in {{ birthday | date:"yyyy" }}</h2>
+<h2>Your total is {{total | currency:"USD":"1"}}</h2>
+<h2>The fee is {{ fee | percent }}</h2>
