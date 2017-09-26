@@ -52,3 +52,61 @@
 <h2>I was born in {{ birthday | date:"yyyy" }}</h2>
 <h2>Your total is {{total | currency:"USD":"1"}}</h2>
 <h2>The fee is {{ fee | percent }}</h2>
+<h1>Events</h1>
+<button (click)="fireClickEvent($event)">Click Event</button>
+<button (mouseover)="fireClickEvent($event)">Mouseover Event</button>
+<button (mousedown)="fireClickEvent($event)">Mousedown Event</button>
+<button (mouseup)="fireClickEvent($event)">Mouseup Event</button>
+<button (dblclick)="fireClickEvent($event)">Double Click Event</button>
+<button (drag)="fireClickEvent($event)">Drag Click Event</button>
+<br>
+<button (click)="toggleText()">Toggle Text</button>
+<div *ngIf="value">
+    <h1>Some Text</h1>
+</div>
+<hr>   
+<input type="text" (keyup)="fireEvent($event)" placeholder="Keyup Event">
+<br>
+<input type="text" (keydown)="fireEvent($event)" placeholder="Keydown Event">
+<br>
+<input type="text" (focus)="fireEvent($event)" placeholder="Focus Event">
+<br>
+<input type="text" (blur)="fireEvent($event)" placeholder="Blur Event">
+<br>
+<input type="text" (cut)="fireEvent($event)" placeholder="Cut Event">
+<br>
+<input type="text" (copy)="fireEvent($event)" placeholder="Copy Event">
+<br>
+<input type="text" (paste)="fireEvent($event)" placeholder="Paste Event">
+<hr>
+<input type="text" (keyup)="changeText($event)" placeholder="Change Text">
+<h2>{{text | uppercase}}</h2>
+<h1>2 Way Data Binding with ngModel</h1>
+<input type="text" [(ngModel)]=dataBound name="dataBound">
+<h3>{{ dataBound }}</h3>
+<h1>Form Submission</h1>
+<form (submit)="onSubmit()">
+    <label>Name:</label>
+    <input type="text" [(ngModel)]="name1" name="name1">
+    <input type="submit" value="Submit">
+</form>
+<ul>
+    <li *ngFor="let user of users">{{ user }}</li>
+</ul>
+<hr>
+<form novalidate #f="ngForm" (ngSubmit)=onSubmit1(f) >
+    <label>Name</label>
+    <input type="text" [(ngModel)]="user1.name" name="name" #userName="ngModel" minlength="2" required>
+    <div *ngIf="userName.errors?.required && userName.touched">Name is required</div>
+    <div *ngIf="userName.errors?.minlength && userName.touched">Name should be at least 2 characters</div>
+    <br>
+    <label>Email</label>
+    <input type="text" [(ngModel)]="user1.email" name="email" #userEmail="ngModel" required>
+    <div *ngIf="userEmail.errors?.required && userEmail.touched">Email is required</div>
+    <br>
+    <label>Phone</label>
+    <input type="text" [(ngModel)]="user1.phone" name="phone" #userPhone="ngModel" minlength="10" >
+    <div *ngIf="userPhone.errors?.minlength && userPhone.touched">Phone should be at least 10 characters</div>    
+    <br>
+    <input type="submit" value="Submit">
+</form>

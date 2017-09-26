@@ -51,5 +51,40 @@ export class SandboxComponent{
     birthday = new Date(1990,5,23);
     total = 500;
     fee = .10;
+    fireClickEvent(e){
+        console.log(e);
+    }
+    value:boolean = true;
+    toggleText() {
+        this.value = !this.value;
+    }
+    fireEvent(e) {
+        console.log(e.type)
+    }
+    text:string = 'Hello';
+    changeText(e) {
+        this.text = e.target.value;
+    }
+    dataBound = '';
+    name1 = '';
+    users = [];
+    onSubmit() {
+        this.users.push(this.name1);
+        this.name1 = '';
+    }
+
+    user1 = {
+        name: '',
+        email: '',
+        phone: ''
+    }
+    onSubmit1({value,valid}) {
+        if(valid) {
+            console.log(value)
+        } else {
+            console.log('Form is invalid!')
+        }
+    }
+    
 }
 
