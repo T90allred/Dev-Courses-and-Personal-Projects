@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { Customer } from "./Customer";
+import { DataService } from "../../services/data.service";
 @Component({
     selector: 'sandbox',
     templateUrl: './sandbox.component.html',
@@ -12,7 +13,8 @@ export class SandboxComponent{
     customer:Customer;
     customers:Customer[];
     friends = ['Jack','Phil','Ben'];
-    constructor() {
+    constructor(public dataService:DataService) {
+        console.log(this.dataService.getUsers());
         this.customer = {
             id: 3726,
             name: 'Derek',
