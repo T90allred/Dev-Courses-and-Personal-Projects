@@ -14,7 +14,14 @@ export class SandboxComponent{
     customers:Customer[];
     friends = ['Jack','Phil','Ben'];
     constructor(public dataService:DataService) {
-        console.log(this.dataService.getUsers());
+        this.dataService.getUsers().subscribe(users => {
+            this.myUsers = users;
+        });
+
+        this.dataService.getData().subscribe(data => {
+            // console.log(data);
+            this.data.push(data);
+        });
         this.customer = {
             id: 3726,
             name: 'Derek',
@@ -86,7 +93,19 @@ export class SandboxComponent{
         } else {
             console.log('Form is invalid!')
         }
+    };
+    data:any[] = [];
+    myUsers:any[];
+    myUser = {
+        name: '',
+        email: '',
+        phone: ''
     }
-    
+    newSubmit() {
+        this.dataService.addUser(this.myUser).subscribe(user => {
+            console.log(user);
+            this.myUsers.unshift(user);
+        })
+    }
 }
 
