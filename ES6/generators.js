@@ -1,6 +1,7 @@
 const colors = ['red','green','black','grey','blue','orange'];
 const numbers = [5,24,3,78,65,21,24];
 
+
 for (let color of colors) {
   console.log(color);
 }
@@ -60,3 +61,38 @@ for (color of colors1()) {
 }
 
 console.log(myFavColors);
+
+/*
+  $$$$$$$$$$$$$$$$$$$$$$$$$$$$ PRACTICAL EXAMPLE OF GENERATORS $$$$$$$$$$$$$$$$$$$$$$$$$$$
+*/
+
+const testingTeam = {
+  lead: 'Hunter',
+  tester: 'Bill'
+}
+
+const engineeringTeam = {
+  testingTeam,
+  size: 4,
+  department: 'engineering',
+  lead: 'Derek',
+  manager: 'Alex',
+  engineer: 'Dave'
+};
+
+function* EngineeringTeamIterator(team) {
+  yield team.lead;
+  yield team.manager;
+  yield team.engineer;
+}
+
+function* TestingTeamIterator(team) {
+  yield team.lead;
+  yield team.tester;
+}
+
+const names = [];
+for (let name of EngineeringTeamIterator(engineeringTeam)) {
+  names.push(name);
+}
+console.log(names);
