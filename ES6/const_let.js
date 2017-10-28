@@ -26,5 +26,7 @@ let currentCode = 'OK';
 for (let i = 0; i < statuses.length; i++) {
   if (statuses[i].code === currentCode) {
     message = statuses[i].response;
+  } else {
+    message = 'Invalid code...';
   }
 }
