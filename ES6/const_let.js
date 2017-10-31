@@ -1,14 +1,18 @@
+//let and const are new features added to the ES6 syntax.
+//In a way, let is the new var. let can be used to declare a variable and changed later on in the codebase
+// const is used to declare something that will not change at any point in your code.
+
 var name = 'Jane';
 var idNumber = 123;
 var title = 'Software Engineer';
-var hourlyWage = 50;
+var hourlyWage = 35;
 
 //ES6
 
 const name = 'Jane';
 const idNumber = 123;
 let title = 'Software Engineer';
-let hourlyWage = 50;
+let hourlyWage = 35;
 
 //examples
 const statuses = [
@@ -22,5 +26,7 @@ let currentCode = 'OK';
 for (let i = 0; i < statuses.length; i++) {
   if (statuses[i].code === currentCode) {
     message = statuses[i].response;
+  } else {
+    message = 'Invalid code...';
   }
 }
