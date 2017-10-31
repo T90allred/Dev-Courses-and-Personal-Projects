@@ -101,11 +101,11 @@
 var startingNum = 0;
 
 function func(num) {
-  for(let i = 0; i<=num; i++) {
+  for(let i = 0; i<num; i++) {
     startingNum += 2;
     console.log(startingNum);
   }
   return startingNum;
 }
 
-func(20);
+func(10);
