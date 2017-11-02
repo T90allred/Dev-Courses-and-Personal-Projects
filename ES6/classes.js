@@ -14,7 +14,7 @@ console.log(car.drive());
 console.log(car.title);
 
 //new way using US6
-class Car {
+class Car1 {
   constructor({ title }) {
     this.title = title;
   }
@@ -24,7 +24,7 @@ class Car {
   }
 }
 
-class Toyota extends Car {
+class Toyota extends Car1 {
   constructor(options) {
     super(options);
     this.color = options.color;
@@ -35,7 +35,7 @@ class Toyota extends Car {
 }
 
 const tacoma = new Toyota({color: 'White', title: 'My Truck'});
-const carInstance = new Car({title: 'Toyota'});
+const carInstance = new Car1({title: 'Toyota'});
 console.log(tacoma.drive());
 
 //here with ES7 syntax you can drop the constructor function along with calling super
