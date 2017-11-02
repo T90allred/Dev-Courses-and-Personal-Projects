@@ -8,7 +8,9 @@ var type = expense.type;
 var cost = expense.cost;
 
 //ES6
-//Here the code is setting an object 'expense' and making two properties on the object of 'type', 'cost'.
+// destructuring happens when you have an object with data and you want to pull all or some of that data out 
+// and save it as individual variables you can then manipulate.
+// the code below makes 2 new global variables 'type' and 'cost' by taking them from the 'expense' object above
 const {type,cost} = expense;
 
 // simple example
