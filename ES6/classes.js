@@ -37,3 +37,25 @@ class Toyota extends Car {
 const tacoma = new Toyota({color: 'White', title: 'My Truck'});
 const carInstance = new Car({title: 'Toyota'});
 console.log(tacoma.drive());
+
+//here with ES7 syntax you can drop the constructor function along with calling super
+//functions become assigned to a variable and data members become regular variables
+
+class Human{
+  gender = 'male';
+  printGender = () => {
+    console.log(this.gender);
+  }
+}
+
+class Person extends Human{
+  name = 'Derek'
+  printName = () => {
+    console.log(this.name);
+  }
+}
+
+const me = new Person();
+
+me.printName();
+me.printGender();
