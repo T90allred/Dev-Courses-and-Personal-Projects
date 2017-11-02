@@ -52,3 +52,45 @@ const MathLibrary = {
 
 MathLibrary.calculateProduct(1,4);
 MathLibrary.multiply(1,2);
+
+//----------------------------Additional!!!----------------------------
+
+
+// the spread operator is used to extract things from arrays/objects and spread them 
+// into another data structure of similar origin. You can spread arrays into objects
+// but not objects into arrays
+
+const array = [1,2,3,4,5]
+
+const newArray = [5,4,3,2,1,...array]
+
+// console.log(newArray)
+
+const object = {
+  name: 'Derek',
+  age: 27
+}
+
+const newObject = {
+  ...object,
+  married: true,
+  kids: false
+}
+
+const test = {
+  ...newObject,
+  ...newArray
+}
+  
+// console.log(newObject);
+
+console.log(test);
+
+// the rest operator is heavily used in functions where you dont want to accept any amount
+// of arguments passed in and be able to use them all
+
+const filterNums = (...args) => {
+  return args.filter( el => el%2 === 0);
+}
+
+console.log(filterNums(1,2,3,4,5,6,7,8));
